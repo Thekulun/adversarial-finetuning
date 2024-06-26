@@ -20,7 +20,7 @@ CUDA_VISIBLE_DEVICES=0 python run.py \
     --do_test \
     --train_data_file=../dataset/train.jsonl \
     --eval_data_file=../dataset/valid.jsonl \
-    --test_data_file=/home/fdse/sjw/attack/attack_csv/defect/codebert/ori/test_adv_coda.jsonl \
+    --test_data_file=../attack/attack_csv/defect/codebert/ori/test_adv_coda.jsonl \
     --epoch 1 \
     --block_size 400 \
     --train_batch_size 16 \
