@@ -1,0 +1,17 @@
+CUDA_VISIBLE_DEVICES=0 python run.py \
+    --output_dir=./saved_models/FreeLB/ \
+    --model_type=roberta \
+    --tokenizer_name=microsoft/unixcoder-base \
+    --model_name_or_path=microsoft/unixcoder-base \
+    --do_test \
+    --train_data_file=../dataset/train.jsonl \
+    --eval_data_file=../dataset/valid.jsonl \
+    --test_data_file=/home/fdse/sjw/attack/attack_csv/defect/unixcoder/ori/test_adv_coda.jsonl \
+    --epoch 2 \
+    --block_size 512 \
+    --train_batch_size 16 \
+    --eval_batch_size 64 \
+    --learning_rate 2e-5 \
+    --max_grad_norm 1.0 \
+    --evaluate_during_training \
+    --seed 3  2>&1 | tee ./saved_models/train.log
