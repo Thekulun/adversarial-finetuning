@@ -21,12 +21,6 @@ CUDA_VISIBLE_DEVICES=0 python run.py \
     --train_data_file=../dataset/train.jsonl \
     --eval_data_file=../dataset/valid.jsonl \
     --test_data_file=../attack/attack_csv/defect/codebert/ori/test_adv_coda.jsonl \
-    --epoch 1 \
-    --block_size 400 \
-    --train_batch_size 16 \
-    --eval_batch_size 64 \
-    --learning_rate 2e-5 \
-    --max_grad_norm 1.0 \
     --evaluate_during_training \
     --seed 3  2>&1 | tee ./saved_models/train.log
 ```
